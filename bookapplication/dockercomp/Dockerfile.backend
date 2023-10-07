@@ -1,0 +1,10 @@
+FROM node
+
+WORKDIR /root/
+COPY ./bookdee_backend.sh .
+COPY ./backend_init.sh .
+RUN chmod 777 ./bookdee_backend.sh
+RUN chmod 777 ./backend_init.sh
+RUN ./bookdee_backend.sh
+CMD ["./backend_init.sh"]
+# CMD ["echo", "helloworld"]
